@@ -1,0 +1,12 @@
+# Dependências e Cache
+/node_modules
+/.next
+
+# Variáveis de Ambiente
+.env
+.env.local
+
+# Logs e Cache de Outros Gerenciadores
+npm-debug.log
+yarn-error.log
+pnpm-debug.log

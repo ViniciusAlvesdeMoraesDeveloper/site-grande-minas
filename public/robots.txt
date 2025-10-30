@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://colegiotecminas.com.br/sitemap.xml
