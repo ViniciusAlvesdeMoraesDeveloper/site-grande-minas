@@ -5,11 +5,10 @@ import CardsPosMain from "@/utils/cardsPosMain";
 import { useState } from "react";
 import SearchSection from "@/components/search";
 import { Header } from "@/components/header";
-import { SobreNosTecMinas } from "@/components/sobrenos";
+import SobreNosTecMinas from "@/app/sobre-nos/page";
 import Depoiments from "@/components/depoiments";
-import Footer from "@/components/footer";
 import Contact from "@/components/contact";
-
+import CurseEja from "@/components/curseEJA";
 const INITIAL_VISIBLE_COURSES = 6; // Quantos cursos aparecem inicialmente (Definir)
 const COURSES_INCREMENT = 3; // Quantos cursos são adicionados a cada clique (Definir)
 
@@ -61,7 +60,7 @@ export default function Home() {
       </div>
       <div className="my-10 sm:my-24" />
       <div id="sobrenos">
-        <SobreNosTecMinas />
+        
       </div>
 
       <SearchSection
@@ -93,12 +92,12 @@ export default function Home() {
           )}
         </div>
       </section>
-
+      <CurseEja/>
       <Depoiments />
       <div id="contato">
         <Contact />
       </div>
-      <Footer />
+      
     </>
   );
 }

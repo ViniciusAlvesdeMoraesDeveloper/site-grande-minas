@@ -1,38 +1,10 @@
-"use client";
+'use client';
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Briefcase, Library, Rocket } from "lucide-react";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
-
-export const metadata = {
-  title: "Sobre Nós | Colégio Técnico TecMinas",
-  description:
-    "O Colégio Técnico TecMinas é referência em educação técnica e profissionalizante em Minas Gerais. Conheça nossa filosofia, metodologia e compromisso com a empregabilidade.",
-  keywords: [
-    "Sobre TecMinas",
-    "Educação Técnica MG",
-    "Colégio Profissionalizante",
-    "História TecMinas",
-  ],
-  openGraph: {
-    title: "Sobre o Colégio Técnico TecMinas",
-    description:
-      "Transformando potencial em profissão. Educação técnica que conecta teoria e prática.",
-    url: "https://colegiotecminas.com.br/sobre-nos",
-    siteName: "TecMinas",
-    images: [
-      {
-        url: "https://colegiotecminas.com.br/images/sobre.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Sobre o Colégio Técnico TecMinas",
-      },
-    ],
-    locale: "pt_BR",
-    type: "website",
-  },
-};
+import { Metadata } from 'next';
 
 const highlights = [
   {
@@ -52,9 +24,9 @@ const highlights = [
   },
 ];
 
-export function SobreNosTecMinas() {
+export function SobreNosGrandeMinas() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section id="sobre" className="w-full bg-white py-16 md:py-24 mt-10">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -68,7 +40,7 @@ export function SobreNosTecMinas() {
               delay={0.4}
               className="text-red-600"
             >
-              {" Colégio Técnico TecMinas"}
+              {" Grande Minas"}
             </TextEffect>
           </h1>
 
@@ -80,9 +52,9 @@ export function SobreNosTecMinas() {
             delay={0.8}
             className="mt-6 text-xl leading-8 text-gray-600"
           >
-            Comprometidos em transformar potencial em profissão. Oferecemos
-            educação técnica de excelência que abre portas para o futuro, no
-            coração de Minas Gerais.
+            Comprometidos em transformar vidas através da educação. A Grande Minas
+            oferece Cursos Técnicos de excelência e a chance de concluir os estudos
+            rapidamente com o EJA (Educação de Jovens e Adultos), abrindo novos caminhos para o futuro.
           </TextEffect>
         </div>
 
@@ -103,7 +75,7 @@ export function SobreNosTecMinas() {
           <AspectRatio ratio={4 / 3}>
             <Image
               src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
-              alt="Alunos da TecMinas colaborando em um projeto"
+              alt="Alunos da Grande Minas colaborando em um projeto"
               fill
               className="rounded-lg object-cover shadow-lg"
             />
@@ -119,7 +91,7 @@ export function SobreNosTecMinas() {
               Nossa Filosofia: Educação que Conecta com o Mercado
             </TextEffect>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Acreditamos que a teoria só tem valor quando aplicada na prática.
+              Acreditamos que o conhecimento só tem valor quando aplicado na prática.
               Por isso, nossa metodologia é focada em projetos reais, desafios
               do mercado e parcerias com empresas locais, garantindo que nossos
               alunos saiam não apenas com um diploma, mas com experiência

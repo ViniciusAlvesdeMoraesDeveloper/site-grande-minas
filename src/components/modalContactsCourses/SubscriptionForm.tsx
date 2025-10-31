@@ -195,6 +195,7 @@ export default function SubscriptionForm({
           <div className="bg-white w-full max-w-lg rounded-2xl shadow-xl p-6 relative">
             <button
               onClick={() => setShowModal(false)}
+              aria-label="Fechar Modal"
               className="absolute top-3 right-3 text-zinc-500 hover:text-zinc-800"
             >
               <X size={22} />

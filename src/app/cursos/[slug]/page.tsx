@@ -58,6 +58,12 @@ export default function CursosSlugPage() {
           </div>
         </div>
       </div>
+
+      
+
+
+
+
     );
   }
 

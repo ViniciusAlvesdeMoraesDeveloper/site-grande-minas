@@ -35,7 +35,7 @@ export default function SearchSection({
 
       {/* Barra de Busca */}
       <div className="relative mt-10">
-        <div className="flex w-full max-w-3xl mx-auto rounded-xl bg-white shadow-lg shadow-zinc-300/40 overflow-hidden ring-1 ring-zinc-200 focus-within:ring-2 focus-within:ring-red-600 transition-all duration-300">
+        <div className="flex w-full max-w-3xl mx-auto rounded-xl bg-white shadow-lg shadow-zinc-300/40 overflow-hidden ring-1 ring-zinc-200 focus-within:ring-2 focus-within:ring-[#FF5B04] transition-all duration-300">
           <input
             type="text"
             placeholder="Buscar por nome do curso..."
@@ -43,8 +43,11 @@ export default function SearchSection({
             value={searchTerm}
             onChange={onSearchChange}
           />
-          <button className="bg-red-700 px-6 text-white flex items-center justify-center hover:bg-red-800 transition-colors">
-            <Search size={24} />
+          <button className="bg-[#FF5B04] px-6 text-white flex items-center justify-center hover:bg-[#ce2a38] transition-colors"
+          aria-label="pesquisar">
+            <Search size={24} 
+            />
+          
           </button>
         </div>
       </div>

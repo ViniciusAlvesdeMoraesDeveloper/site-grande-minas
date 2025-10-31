@@ -4,27 +4,27 @@ import { Phone, Mail, Instagram, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 export const metadata = {
-  title: "Fale Conosco | Colégio Técnico TecMinas",
+  title: "Fale Conosco | Colégio Técnico Grande-minas",
   description:
-    "Entre em contato com o Colégio Técnico TecMinas. Telefone, WhatsApp, e-mail e endereço em Coronel Fabriciano - MG.",
+    "Entre em contato com o Colégio Técnico Grande Minas. Telefone, WhatsApp, e-mail e endereço em Coronel Fabriciano - MG.",
   keywords: [
-    "Contato TecMinas",
-    "Telefone TecMinas",
-    "E-mail TecMinas",
-    "Endereço TecMinas",
+    "Contato Grande Minas",
+    "Telefone Grande Minas",
+    "E-mail Grande Minas",
+    "Endereço Grande Minas",
   ],
   openGraph: {
-    title: "Contato - Colégio Técnico TecMinas",
+    title: "Contato - Colégio Técnico Grande Minas",
     description:
       "Fale com nossa equipe e tire suas dúvidas sobre cursos e matrículas.",
-    url: "https://colegiotecminas.com.br/contato",
-    siteName: "TecMinas",
+    url: "https://colegiorandeminas.com.br/contato",
+    siteName: "Grandeminas",
     images: [
       {
-        url: "https://colegiotecminas.com.br/images/contato.jpg",
+        url: "https://colegiograndeminas.com.br/images/contato.jpg",
         width: 1200,
         height: 630,
-        alt: "Contato TecMinas",
+        alt: "Contato Grandeminas",
       },
     ],
     locale: "pt_BR",
@@ -37,20 +37,20 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6 text-blue-600" />,
       label: "Telefone Suporte",
-      value: "(31) 97314-4070",
-      href: "tel:+5531973144070",
+      value: "(31) 973309678",
+      href: "tel:+5531973309678",
     },
     {
       icon: <Mail className="w-6 h-6 text-red-500" />,
       label: "E-mail",
-      value: "gerenciageraltecminas@gmail.com",
-      href: "mailto:gerenciageraltecminas@gmail.com",
+      value: " grandeminas.tec@gmail.com",
+      href: "mailto: grandeminas.tec@gmail.com",
     },
     {
       icon: <Instagram className="w-6 h-6 text-pink-500" />,
       label: "Instagram",
-      value: "@tecminas.ead",
-      href: "https://instagram.com/tecminas.ead",
+      value: "@Grandeminas.ead",
+      href: "https://www.instagram.com/grandeminas.tec?igsh=YzJrbHoyM2Ricnpp&utm_source=qr",
     },
     {
       icon: <MapPin className="w-6 h-6 text-green-600" />,
@@ -62,7 +62,7 @@ export default function Contact() {
   ];
 
   return (
-    <Card className="w-full max-w-4xl mx-auto shadow-xl rounded-3xl p-10 bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200 mb-20">
+    <Card id="contato" className="w-full max-w-4xl mx-auto shadow-xl rounded-3xl p-10 bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200 mb-20">
       <CardHeader>
         <CardTitle className="text-3xl font-bold text-center text-gray-900 tracking-tight">
           Contatos da Empresa

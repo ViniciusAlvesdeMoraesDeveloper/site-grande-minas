@@ -11,22 +11,21 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-[#DC2626] rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">T</span>
+                <span className="text-white font-bold text-xl">GM</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">TecMinas</h3>
+                <h3 className="text-xl font-bold text-white">Grande Minas</h3>
                 <p className="text-xs text-[#9CA3AF]">
                   Educação Técnica de Excelência
                 </p>
               </div>
             </div>
             <p className="text-sm text-[#9CA3AF] leading-relaxed">
-              Transformando vidas através da educação. Há mais de 5 anos
-              formando os melhores profissionais do mercado.
+              Onde o futuro da sua carreira começa. Com uma estrutura de ensino moderna e um compromisso inabalável com a excelência, estamos prontos para formar os melhores profissionais.
             </p>
             <div className="flex space-x-4 pt-2">
               <a
-                href="https://www.instagram.com/tecminas.ead/"
+                href="https://www.instagram.com/grandeminas.tec?igsh=YzJrbHoyM2Ricnpp&utm_source=qr"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-[#9CA3AF] hover:text-[#DC2626] cursor-pointer transition-colors" />
@@ -87,14 +86,14 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-[#9CA3AF]">
               <li>
                 <a
-                  href="#sobrenos"
+                  href="/sobre-nos"
                   className="hover:text-[#DC2626] transition-colors"
                 >
                   Sobre Nós
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#DC2626] transition-colors">
+                <a href="#contato" className="hover:text-[#DC2626] transition-colors">
                   Contato
                 </a>
               </li>
@@ -133,7 +132,7 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5" />
                 <a
-                  href="mailto:gerenciageraltecminas@gmail.comm"
+                  href="mailto: grandeminas.tec@gmail.com"
                   className="hover:text-[#DC2626] transition-colors"
                 >
                   gerenciageraltecminas@gmail.com
@@ -142,10 +141,10 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5" />
                 <a
-                  href="tel:+5531973144070"
+                  href="tel:+5531973309678"
                   className="hover:text-[#DC2626] transition-colors"
                 >
-                  (31) 97314-4070
+                  (31) 973309678
                 </a>
               </li>
             </ul>
@@ -155,10 +154,10 @@ const Footer = () => {
         {/* Barra de Copyright */}
         <div className="mt-16 pt-8 border-t border-gray-800 text-center">
           <p className="text-sm text-[#9CA3AF]">
-            © {new Date().getFullYear()} TecMinas. Todos os direitos reservados.
+            © {new Date().getFullYear()} GrandeMinas. Todos os direitos reservados.
           </p>
           <p className="text-sm text-[#9CA3AF]">
-            CNPJ: 61.481.601/0001-58 | Credenciada pelo MEC
+            CNPJ: 63.110.658/0001-76 | Credenciada pelo MEC
           </p>
         </div>
       </div>

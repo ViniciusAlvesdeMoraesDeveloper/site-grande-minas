@@ -4,6 +4,8 @@ import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieBanner";
 import SchemaOrg from "./seo/SchemaOrg";
+import { Header } from "@/components/header";
+import Footer from "@/components/footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tecminas",
+  title: "Grande Minas",
   description: "Site tecminas criado por Pedro Peixoto",
 };
 
@@ -34,8 +36,10 @@ export default function RootLayout({
       >
         {children}
         <SchemaOrg />
+        <Header/>
         <WhatsAppButton />
         <CookieConsent />
+        <Footer/>
       </body>
     </html>
   );

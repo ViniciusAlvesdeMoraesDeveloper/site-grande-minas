@@ -3,7 +3,7 @@
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "5531973144070"; // coloque aqui o número com DDI e DDD
+  const phoneNumber = "31973309678"; // coloque aqui o número com DDI e DDD
   const message = "Olá! Gostaria de saber mais sobre os cursos."; // mensagem automática
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
