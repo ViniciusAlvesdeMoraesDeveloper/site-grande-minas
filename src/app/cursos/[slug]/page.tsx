@@ -19,16 +19,22 @@ export default function CursosSlugPage() {
     (course) => slugify(course.subTitle) === decodedSlug
   );
 
+  // Definições de cor
+  const blazeOrange = "#FF5B04";
+  const mirage = "#16232A";
+  const wildSand = "#E4EEF0";
+
+
   // --- 1. PÁGINA DE CATEGORIA DE CURSOS ---
   if (filteredByCategory.length > 0) {
     return (
-      // Fundo premium: um cinza muito sutil para dar profundidade
-      <div className="bg-zinc-50 min-h-screen">
+      // Fundo em Wild Sand
+      <div className={`bg-[${wildSand}] min-h-screen`}>
         <div className="p-8 max-w-7xl mx-auto">
-          {/* Botão "Voltar" refinado e consistente */}
+          {/* Botão "Voltar" (Texto Mirage, Hover Blaze Orange) */}
           <Link
             href="/"
-            className="group mb-12 inline-flex items-center gap-1.5 text-zinc-600 hover:text-red-700 transition-colors duration-300 font-semibold"
+            className={`group mb-12 inline-flex items-center gap-1.5 text-[${mirage}]/70 hover:text-[${blazeOrange}] transition-colors duration-300 font-semibold`}
           >
             <ChevronLeft
               size={20}
@@ -38,14 +44,14 @@ export default function CursosSlugPage() {
           </Link>
 
           {/* Título com cores da marca e tipografia premium */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-800 leading-tight">
+          <h1 className={`text-4xl md:text-5xl font-bold mb-4 text-[${mirage}] leading-tight`}>
             Explore os melhores cursos de{" "}
-            {/* Efeito de texto em gradiente para um toque premium */}
-            <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+            {/* Efeito de texto em gradiente para um toque premium (Blaze Orange) */}
+            <span className={`bg-gradient-to-r from-[${blazeOrange}] to-orange-600 bg-clip-text text-transparent`}>
               {filteredByCategory[0].subTitle}
             </span>
           </h1>
-          <p className="text-zinc-600 text-lg mb-12 max-w-3xl">
+          <p className={`text-[${mirage}]/70 text-lg mb-12 max-w-3xl`}>
             Aprimore suas habilidades com cursos reconhecidos e conteúdo de alta
             qualidade. Escolha abaixo e invista no seu futuro!
           </p>
@@ -58,12 +64,6 @@ export default function CursosSlugPage() {
           </div>
         </div>
       </div>
-
-      
-
-
-
-
     );
   }
 
@@ -74,26 +74,26 @@ export default function CursosSlugPage() {
 
   if (course) {
     const cardData = allCoursesForCards.find((c) => c.title === course.title);
-    // Este componente já possui seu próprio estilo premium, então o mantemos.
+    // Este componente já possui seu próprio estilo (e já foi modificado)
     return <CourseInformations course={course} cardData={cardData} />;
   }
 
   // --- 3. PÁGINA DE ERRO 404 ---
   return (
-    <div className="bg-zinc-50 flex flex-col items-center justify-center min-h-screen text-center p-6">
-      <h1 className="text-4xl font-bold text-zinc-800">
+    <div className={`bg-[${wildSand}] flex flex-col items-center justify-center min-h-screen text-center p-6`}>
+      <h1 className={`text-4xl font-bold text-[${mirage}]`}>
         Página não encontrada!
       </h1>
-      <p className="text-zinc-600 mt-3 mb-8 max-w-md">
+      <p className={`text-[${mirage}]/70 mt-3 mb-8 max-w-md`}>
         O conteúdo que você procura não existe ou foi movido. Verifique o
         endereço digitado e tente novamente.
       </p>
 
-      {/* Botão de ação primário usando as cores da marca */}
+      {/* Botão de ação primário (Blaze Orange) */}
       <Link
         href="/"
-        className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-800 text-white
-          px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-red-500/20 hover:shadow-xl hover:shadow-red-500/30"
+        className={`group inline-flex items-center gap-2 bg-[${blazeOrange}] hover:bg-orange-600 text-white
+          px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-[${blazeOrange}]/20 hover:shadow-xl hover:shadow-[${blazeOrange}]/30`}
       >
         <ChevronLeft
           size={20}

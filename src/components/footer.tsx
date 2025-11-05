@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Coluna 1: Logo e Redes Sociais */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-[#DC2626] rounded-lg flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-[#FF5B04] rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">GM</span>
               </div>
               <div>
@@ -21,14 +21,24 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-[#9CA3AF] leading-relaxed">
-              Onde o futuro da sua carreira começa. Com uma estrutura de ensino moderna e um compromisso inabalável com a excelência, estamos prontos para formar os melhores profissionais.
+              O Colégio Técnico Grande Minas é a solução para o profissional que busca o reconhecimento de sua experiência. Valide seu conhecimento em um Diploma Técnico oficial, ou conclua o Ensino Médio com nosso EJA EaD Acelerado.
+              Grande Minas: Seu Grande Salto em Competências.
             </p>
             <div className="flex space-x-4 pt-2">
               <a
                 href="https://www.instagram.com/grandeminas.tec?igsh=YzJrbHoyM2Ricnpp&utm_source=qr"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-[#9CA3AF] hover:text-[#DC2626] cursor-pointer transition-colors" />
+                <Instagram className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF5B04] cursor-pointer transition-colors" />
+              </a>
+            </div>
+
+            <div className="flex space-x-4 pt-2">
+              <a
+                href="https://www.facebook.com/share/14R1iPUTdP1/?mibextid=wwXIfr"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF5B04] cursor-pointer transition-colors" />
               </a>
             </div>
           </div>
@@ -40,7 +50,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#cursos"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   Área da Saúde
                 </a>
@@ -48,7 +58,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#cursos"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   Administração & Gestão
                 </a>
@@ -56,7 +66,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#cursos"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   Tecnologia e Informática
                 </a>
@@ -64,7 +74,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#cursos"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   Engenharia & Manutenção
                 </a>
@@ -72,7 +82,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#cursos"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   Construção e Infraestrutura
                 </a>
@@ -87,32 +97,32 @@ const Footer = () => {
               <li>
                 <a
                   href="/sobre-nos"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   Sobre Nós
                 </a>
               </li>
               <li>
-                <a href="#contato" className="hover:text-[#DC2626] transition-colors">
+                <a href="#contato" className="hover:text-[#FF5B04] transition-colors">
                   Contato
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 ></a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 ></a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 ></a>
               </li>
             </ul>
@@ -133,7 +143,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5" />
                 <a
                   href="mailto: grandeminas.tec@gmail.com"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   gerenciageraltecminas@gmail.com
                 </a>
@@ -142,7 +152,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5" />
                 <a
                   href="tel:+5531973309678"
-                  className="hover:text-[#DC2626] transition-colors"
+                  className="hover:text-[#FF5B04] transition-colors"
                 >
                   (31) 973309678
                 </a>

@@ -36,7 +36,7 @@ export default function HeroSection() {
         </picture>
       </div>
       <div className="relative z-10 flex flex-col items-center md:items-start justify-end h-full text-center md:text-left p-4 sm:p-8 md:px-20">
-        <div className="flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12 hidden md:block">
+        <div className="hidden md:flex  flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12 ">
           <Button
             asChild
             size="lg"
@@ -54,6 +54,27 @@ export default function HeroSection() {
             <Link href="/#cursos">Cursos</Link>
           </Button>
         </div>
+
+        {/** Layout mobile */}
+      <div className="flex md:hidden flex-col  sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-35 ">
+      <Button
+            asChild
+            size="lg"
+            className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-8 py-6 "
+          >
+            <Link href="/#cursos">Comece agora</Link>
+          </Button>
+
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className=" border-white text-lg px-8 py-6"
+          >
+            <Link href="/#cursos">Cursos</Link>
+          </Button>
+
+      </div>
       </div>
     </section>
   );

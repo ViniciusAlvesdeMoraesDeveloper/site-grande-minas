@@ -30,7 +30,7 @@ export default function CookieConsent() {
           aceita nossa{" "}
           <a
             href="/politica-de-privacidade"
-            className="text-red-700 font-medium hover:underline"
+            className="text-orange-700 font-medium hover:underline"
           >
             política de privacidade e cookies
           </a>
@@ -45,7 +45,7 @@ export default function CookieConsent() {
           </button>
           <button
             onClick={acceptCookies}
-            className="px-4 py-2 text-sm rounded-lg bg-red-700 text-white hover:bg-red-800"
+            className="px-4 py-2 text-sm rounded-lg bg-orange-700 text-white hover:bg-orange-800"
           >
             Aceitar
           </button>

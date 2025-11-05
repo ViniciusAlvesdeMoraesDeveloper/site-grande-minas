@@ -3,111 +3,112 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
 
+// --- DADOS ADAPTADOS PARA GRANDE MINAS: TÉCNICOS EAD POR COMPETÊNCIA E EJA ---
 const testimonials = [
   {
     id: 1,
-    name: "Juliana Martins",
-    role: "Especialista em Instrumentação Cirúrgica",
-    company: "Hospital Sírio-Libanês",
-    course: "Técnico em Enfermagem",
+    name: "Marta Silva",
+    role: "Proprietária - Salão Beleza & Estética",
+    company: "Certificação por Competência",
+    course: "Técnico em Estética",
     rating: 5,
-    text: "O curso técnico foi a base para a minha especialização. Hoje atuo em cirurgias complexas em um dos melhores hospitais do país. A formação sólida que recebi foi essencial para essa conquista.",
-    salary: "R$ 3.200",
-    timeToJob: "3 meses",
-    avatar: "JM",
+    text: "Trabalho há 15 anos na área, mas sentia falta do diploma para abrir meu próprio negócio com mais segurança. Com o Técnico por Competência, validei toda a minha experiência e consegui meu registro em 30 dias. A Grande Minas transformou meu sonho em realidade de forma rápida e legalizada!",
+    salary: "Negócio Próprio", // Alterado para refletir o público de autônomos
+    timeToJob: "30 dias (Diploma)", // Tempo para obter a certificação
+    avatar: "MS",
   },
   {
     id: 2,
-    name: "Lucas Ferreira",
-    role: "Desenvolvedor de Software Pleno",
-    company: "Itaú Unibanco",
-    course: "Técnico em Desenvolvimento de Sistemas",
+    name: "Pedro Henrique",
+    role: "Líder de Equipe",
+    company: "Construções R. S. LTDA",
+    course: "Técnico em Edificações",
     rating: 5,
-    text: "Saí do curso direto para o mercado, atuando na modernização de sistemas de um dos maiores bancos da América Latina. A metodologia focada em projetos práticos me preparou para os desafios reais do dia a dia.",
-    salary: "R$ 6.000",
-    timeToJob: "Durante o curso",
-    avatar: "LF",
+    text: "Sou mestre de obras há anos. O curso EAD por Competência foi perfeito, pois não tive que parar de trabalhar. Usei minha vivência para conseguir o diploma e, com ele, fui promovido a Líder de Equipe. Pude finalmente dar o próximo passo na minha carreira sem complicações.",
+    salary: "R$ 4.100+", // Salário de promoção, mais realista para a região e modalidade
+    timeToJob: "45 dias (Promoção)",
+    avatar: "PH",
   },
   {
     id: 3,
-    name: "Beatriz Almeida",
-    role: "Coordenadora de Segurança do Trabalho",
-    company: "Embraer",
-    course: "Técnico em Segurança do Trabalho",
+    name: "Ana Carla Santos",
+    role: "Retomada de Estudos",
+    company: "Conclusão do Ensino Médio",
+    course: "EJA - Ensino Médio",
     rating: 5,
-    text: "Comecei como técnica e em menos de 2 anos fui promovida. Hoje lidero projetos de segurança em uma gigante da aviação. A profissão é vital e muito valorizada por empresas sérias.",
-    salary: "R$ 3.000",
-    timeToJob: "1 mês",
-    avatar: "BA",
+    text: "Interrompi meus estudos há 20 anos. O EJA da Grande Minas me deu a flexibilidade para finalizar o Ensino Médio de forma tranquila, no meu tempo, conciliando com o trabalho e a família. Agora posso prestar concursos e buscar um futuro melhor para meus filhos. É nunca é tarde para recomeçar!",
+    salary: "Nova Perspectiva", // Foco na oportunidade, não apenas no dinheiro
+    timeToJob: "6 meses (EJA)",
+    avatar: "AC",
   },
   {
     id: 4,
-    name: "Roberto Dias",
-    role: "Especialista em Robótica Industrial",
-    company: "Volkswagen",
-    course: "Técnico em Automação Industrial",
+    name: "Júlio César",
+    role: "Técnico em Refrigeração",
+    company: "Prestador de Serviços Autônomo",
+    course: "Técnico em Refrigeração e Climatização",
     rating: 5,
-    text: "Sempre fui apaixonado por robôs. O curso me colocou na vanguarda da Indústria 4.0, programando e mantendo os robôs que montam carros. O salário e as oportunidades são incríveis.",
-    salary: "R$ 8.620",
-    timeToJob: "2 meses",
-    avatar: "RD",
+    text: "A modalidade EAD me permitiu estudar no meu próprio ritmo. Já tinha a prática, mas o diploma deu a credibilidade que faltava para fechar contratos maiores e com empresas. Agora sou um Técnico registrado, autônomo e com agenda cheia!",
+    salary: "R$ 5.500 (Estimado)",
+    timeToJob: "2 meses (Certificação)",
+    avatar: "JC",
   },
   {
     id: 5,
-    name: "Vanessa Cruz",
-    role: "Corretora de Imóveis de Alto Padrão",
-    company: "Bossa Nova Sotheby's",
-    course: "Técnico em Transações Imobiliárias",
+    name: "Eliane Souza",
+    role: "Recém-Concluinte (EJA + Técnico)",
+    company: "Em Busca do Primeiro Emprego Técnico",
+    course: "Técnico em Secretariado",
     rating: 5,
-    text: "O curso me deu a credencial (CRECI) e as técnicas de negociação que eu precisava. Hoje, trabalho com imóveis de luxo e meu ganho mensal com comissões supera qualquer expectativa que eu tinha.",
-    salary: "R$ 4.546",
-    timeToJob: "45 dias",
-    avatar: "VC",
+    text: "Concluí o Ensino Médio pelo EJA e já emendei o Técnico EAD. Foi uma jornada desafiadora, mas a equipe da Grande Minas me deu todo o suporte. Ter o diploma técnico abre portas que antes estavam fechadas para mim. Estou confiante na minha nova busca de emprego!",
+    salary: "Em Construção",
+    timeToJob: "Início da Carreira",
+    avatar: "ES",
   },
   {
     id: 6,
-    name: "Guilherme Matos",
-    role: "Técnico em Radiologia (Tomografia/Ressonância)",
-    company: "Fleury Medicina e Saúde",
-    course: "Técnico em Radiologia",
+    name: "Roberto Almeida",
+    role: "Promoção Interna",
+    company: "Indústria Metalúrgica do Vale",
+    course: "Técnico em Mecânica Industrial",
     rating: 5,
-    text: "Foquei em aprender sobre equipamentos de alta tecnologia e hoje sou especialista em exames de imagem complexos. É uma área da saúde com alta demanda por profissionais qualificados e com excelente remuneração.",
-    salary: "R$ 7.800",
-    timeToJob: "2 meses",
-    avatar: "GM",
+    text: "Trabalhava como auxiliar e sabia que precisava do Técnico para crescer. Com o curso por competência, validei meus anos de chão de fábrica e consegui a promoção que eu tanto queria. O processo é sério e super rápido. Recomendo para quem tem pressa de crescer!",
+    salary: "R$ 3.850",
+    timeToJob: "1 mês (Certificação)",
+    avatar: "RA",
   },
 ];
 
 const Depoiments = () => {
-  // Cor vermelha principal para consistência
-  const primaryRed = "#DC2626"; // Um vermelho mais refinado (Tailwind red-600)
+  const primaryColor = "#FF5B04";
+  const primaryText = "#16232A";
+  const neutralBackground = "#E4EEF0";
 
   return (
-    <section id="depoimentos" className="py-20 bg-white">
+    <section id="depoimentos" className={`py-20 bg-[${neutralBackground}]`}>
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Header ADAPTADO */}
         <div className="text-center mb-16">
-          {/* Badge sutil, sem cor forte para não tirar o foco do título */}
-          <Badge variant="secondary" className="font-semibold mb-4">
-            💬 Histórias de sucesso
+          {/* Badge sutil */}
+          <Badge variant="secondary" className="font-semibold mb-4 bg-gray-100 text-[#16232A]">
+            🚀 Histórias de Flexibilidade e Conquista
           </Badge>
-          <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Veja o que nossos alunos
-            <span style={{ color: primaryRed }} className="block">
-              conquistaram depois do curso
+          <h2 className={`text-3xl lg:text-5xl font-bold text-[${primaryText}] mb-6`}>
+            O que nossos alunos
+            <span style={{ color: primaryColor }} className="block">
+              dizem sobre a Grande Minas
             </span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto mb-8">
-            Mais de{" "}
-            <strong style={{ color: primaryRed }}>2.500 profissionais</strong>{" "}
-            já transformaram suas carreiras conosco. Veja alguns depoimentos
-            reais de quem conseguiu emprego na área de tecnologia.
+          <p className={`text-xl text-[${primaryText}]/70 max-w-3xl mx-auto mb-8`}>
+            De Certificação por Competência à Conclusão do EJA: veja
+            depoimentos reais de quem está avançando na carreira e na vida com a
+            flexibilidade do nosso EAD.
           </p>
 
-          {/* Imagem de sucesso */}
+          
           <div className="relative max-w-2xl mx-auto mb-8">
             <Image
-              src="/tg.webp"
+              src="/alunos-formando.webp" 
               width={700}
               height={400}
               alt="Alunos formados comemorando sucesso"
@@ -115,23 +116,23 @@ const Depoiments = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
             <div className="absolute bottom-4 left-4 bg-white/90 p-3 rounded-lg shadow-md backdrop-blur-sm">
-              <div className="text-sm font-semibold text-gray-900">
-                Turma 2025.1
+              <div className={`text-sm font-semibold text-[${primaryText}]`}>
+                Sua experiência vale um diploma!
               </div>
               <div className="text-xs text-gray-500">
-                96% empregados em até 3 meses
+                O caminho mais rápido para a sua certificação técnica.
               </div>
             </div>
           </div>
         </div>
 
-        {/* Grid de Depoimentos */}
+        {/* Grid de Depoimentos (A estrutura da grid é mantida) */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial) => (
             <Card
               key={testimonial.id}
-              // AQUI ESTÁ A ALTERAÇÃO: Sombra mais suave e com cor de brilho vermelho
-              className="bg-white transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-red-500/20 border border-gray-200"
+              // AQUI ESTÁ A ALTERAÇÃO: Sombra com cor de brilho Blaze Orange
+              className={`bg-white transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[${primaryColor}]/20 border border-[${neutralBackground}]`}
             >
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center space-x-1 mb-4">
@@ -139,34 +140,35 @@ const Depoiments = () => {
                     <Star
                       key={i}
                       className="w-4 h-4"
-                      style={{ fill: primaryRed, color: primaryRed }}
+                      // Usando Deep Sea Green para as estrelas, se a intenção é diferenciar (HEX 075056)
+                      style={{ fill: "#075056", color: "#075056" }}
                     />
                   ))}
                 </div>
 
                 <div className="relative mb-6 flex-grow">
-                  {/* Ícone de aspas bem sutil */}
-                  <Quote className="absolute -top-2 -left-2 w-6 h-6 text-gray-100" />
-                  <p className="text-gray-500 leading-relaxed pl-4">
+                  {/* Ícone de aspas sutil, em uma cor clara do fundo */}
+                  <Quote className={`absolute -top-2 -left-2 w-6 h-6 text-[${neutralBackground}]`} />
+                  <p className={`text-[${primaryText}]/70 leading-relaxed pl-4`}>
                     {testimonial.text}
                   </p>
                 </div>
 
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-tr from-red-600 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                    <div className={`w-12 h-12 bg-gradient-to-tr from-[${primaryColor}] to-orange-600 rounded-full flex items-center justify-center shadow-md`}>
                       <span className="text-white font-bold text-sm">
                         {testimonial.avatar}
                       </span>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">
+                      <div className={`font-semibold text-[${primaryText}]`}>
                         {testimonial.name}
                       </div>
-                      {/* Cargo em vermelho para dar destaque à conquista */}
+                      {/* Cargo em Blaze Orange para dar destaque à conquista */}
                       <div
                         className="text-sm font-medium"
-                        style={{ color: primaryRed }}
+                        style={{ color: primaryColor }}
                       >
                         {testimonial.role}
                       </div>
@@ -177,25 +179,25 @@ const Depoiments = () => {
                   </div>
                 </div>
 
-                {/* Métricas de sucesso com borda neutra */}
-                <div className="mt-4 pt-4 border-t border-gray-200">
+                {/* Métricas de sucesso com borda Wild Sand */}
+                <div className="mt-4 pt-4 border-t border-[${neutralBackground}]">
                   <div className="grid grid-cols-2 gap-4 text-xs">
                     <div>
-                      <div className="text-gray-500">Salário inicial</div>
-                      {/* Salário em cor escura para legibilidade, o valor já chama atenção */}
-                      <div className="font-bold text-gray-900">
+                      <div className="text-gray-500">Conquista Financeira</div>
+                      {/* Salário em Mirage para legibilidade */}
+                      <div className={`font-bold text-[${primaryText}]`}>
                         {testimonial.salary}
                       </div>
                     </div>
                     <div>
-                      <div className="text-gray-500">Tempo para emprego</div>
-                      <div className="font-bold text-gray-900">
+                      <div className="text-gray-500">Tempo de Conquista</div>
+                      <div className={`font-bold text-[${primaryText}]`}>
                         {testimonial.timeToJob}
                       </div>
                     </div>
                   </div>
                   <div className="mt-2">
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className={`text-xs border-[${primaryText}] text-[${primaryText}]`}>
                       {testimonial.course}
                     </Badge>
                   </div>

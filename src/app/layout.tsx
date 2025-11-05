@@ -12,13 +12,13 @@ const geistSans = Geist({
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-Franlin-Gothic-Heavy",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Grande Minas",
-  description: "Site tecminas criado por Pedro Peixoto",
+  description: "Site Grande Minas colégio técnico",
 };
 
 export default function RootLayout({

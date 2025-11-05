@@ -1,6 +1,6 @@
 'use client'
 
-import { GraduationCap, ArrowRight, Smartphone, Mail } from "lucide-react";
+import { GraduationCap, ArrowRight, Smartphone } from "lucide-react";
 
 
 export default function CourseEja() {

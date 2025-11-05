@@ -12,6 +12,7 @@ export interface CourseCardProps {
   };
   rating: number;
   flag?: string;
+  onSelectCourse?:(title: string) => void;
 }
 
 export const metadata = {
@@ -50,9 +51,10 @@ export default function CourseCard({
   img,
   rating,
   flag,
+  
 }: CourseCardProps) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-red-500/10">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#E4EEF0] bg-[#E4EEF0] shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#FF5B04]/10">
       <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={img?.src || "/images/placeholder.jpg"}
@@ -61,16 +63,16 @@ export default function CourseCard({
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         {flag && (
-          <span className="absolute top-3 left-3 rounded-full bg-red-700 px-3 py-1 text-xs font-semibold text-white shadow-md">
+          <span className="absolute top-3 left-3 rounded-full bg-[#FF5B04] px-3 py-1 text-xs font-semibold text-white shadow-md">
             {flag}
           </span>
         )}
       </div>
 
-      <div className="flex flex-grow flex-col p-6">
+      <div className="flex flex-grow flex-col p-6 bg-white"> {/* Mantendo o conteúdo interno branco para contraste, se necessário */}
         <div className="mb-3 flex items-center justify-between">
-          <p className="text-sm font-medium text-red-700">{subTitle}</p>
-          <div className="flex items-center gap-1 text-amber-500">
+          <p className="text-sm font-medium text-[#FF5B04]">{subTitle}</p>
+          <div className="flex items-center gap-1 text-[#075056]">
             {Array.from({ length: rating }).map((_, index) => (
               <span key={index} className="text-base">
                 ★
@@ -78,17 +80,17 @@ export default function CourseCard({
             ))}
           </div>
         </div>
-        <h2 className="mb-3 text-xl font-bold leading-snug text-zinc-800 transition-colors duration-300 group-hover:text-red-700">
+        <h2 className="mb-3 text-xl font-bold leading-snug text-[#16232A] transition-colors duration-300 group-hover:text-[#FF5B04]">
           {title}
         </h2>
-        <p className="text-sm text-zinc-600 font-medium">
+        <p className="text-sm text-[#16232A]/70 font-medium"> {/* Usando uma opacidade do Mirage para texto secundário */}
           Curso reconhecido nacionalmente. Avance na sua carreira com
           flexibilidade!
         </p>
         <div className="flex-grow" />
         <Link
           href={`/cursos/${slugify(title)}`}
-          className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-red-700 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-500/20 transition-all duration-300 hover:scale-105 hover:bg-red-800 hover:shadow-xl hover:shadow-red-500/30"
+          className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#FF5B04] px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#FF5B04]/20 transition-all duration-300 hover:scale-105 hover:bg-orange-600 hover:shadow-xl hover:shadow-[#FF5B04]/30"
         >
           <PlusCircle size={20} className="flex-shrink-0" />
           Ver Mais Detalhes

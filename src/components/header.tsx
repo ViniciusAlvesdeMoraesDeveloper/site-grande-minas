@@ -3,66 +3,99 @@ import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, MessageCircle, X } from "lucide-react";
-import { Button } from "@/components/ui/button"; // Verifique este caminho
-import { cn } from "./lib/utils"; // Verifique este caminho
+import { Button } from "@/components/ui/button";
+import { cn } from "./lib/utils";
 import { motion, useScroll } from "framer-motion";
-import Modal from "./modalContactsCourses/modal"; // Verifique este caminho
-import SubscriptionForm from "./modalContactsCourses/SubscriptionForm"; // Verifique este caminho
-import { submitSubscription } from "./lib/api"; // Verifique este caminho
-
+import Modal from "./modalContactsCourses/modal";
+// Remove a importação do SubscriptionForm já que vamos criar o formulário diretamente
 
 interface MenuItem {
   name: string;
-  href: string; 
+  href: string;
 }
 
-
-const menuItems: MenuItem[] = [ 
+const menuItems: MenuItem[] = [
   { name: "Início", href: "/#inicio" },
-  { name: "Sobre Nós", href: "/sobre-nos" }, 
+  { name: "Sobre Nós", href: "/sobre-nos" },
   { name: "Cursos", href: "/#cursos" },
   { name: "Contato", href: "/#contato" },
 ];
 
+const WHATSAPP_TARGET = "5531973309678";
+
+// Defina as áreas disponíveis
+const AREAS_DE_INTERESSE = [
+  "Tecnologia da Informação",
+  "Saúde",
+  "Segurança do Trabalho",
+  "Administração",
+  "Logística",
+  "Meio Ambiente",
+  "Eletrotécnica",
+  "Mineração",
+  "Soldagem",
+  "Enfermagem",
+  "Outras áreas"
+];
 
 type FormStatus = "form" | "loading" | "success";
 
 export const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
-
-  // Usando FormStatus definido acima
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<FormStatus>("form");
+  const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
 
   const openModal = () => {
     setFormStatus("form");
+    setSelectedAreas([]);
     setIsModalOpen(true);
   };
 
-  const closeModal = useCallback(() => setIsModalOpen(false), []);
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+    setSelectedAreas([]);
+  }, []);
 
-  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  // Função para alternar áreas selecionadas
+  const handleAreaToggle = (area: string) => {
+    setSelectedAreas(prev => {
+      if (prev.includes(area)) {
+        return prev.filter(a => a !== area);
+      } else {
+        return [...prev, area];
+      }
+    });
+  };
+
+  // Função de submit atualizada
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormStatus("loading");
 
     try {
       const formData = new FormData(event.currentTarget);
-      const data = {
-        fullerName: formData.get("name") as string,
-        phone: (formData.get("whatsapp") as string).replace(/\D/g, ""),
-        areaOfInterest: formData.get("interestArea") as string,
-        enterpriseId: 1, 
-      };
+      const name = formData.get('name') as string;
+      const userWhatsapp = formData.get('whatsapp') as string;
+      const email = formData.get('email') as string;
+      
 
-      console.log("Enviando dados do Header:", data);
+      // Formatar áreas selecionadas
+      const areasText = selectedAreas.length > 0
+        ? `\n*Áreas de Interesse:* ${selectedAreas.join(', ')}`
+        : '';
 
-      await submitSubscription(data);
+      const message = `Olá! Meu nome é ${name}, e meu Telefone é ${userWhatsapp}.Este é meu e-mail: ${email ? `\n*Email: ${email}` : ''}\n\nEstou entrando em contato pois tenho interesse na área: ${areasText}\n\nGostaria de mais informações sobre os cursos ofertados.`;
 
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_TARGET}&text=${encodedMessage}`;
+
+      window.open(whatsappUrl, '_blank');
       setFormStatus("success");
+
     } catch (error) {
-      console.error("Erro ao enviar o formulário:", error);
-      alert("Houve um problema. Tente novamente.");
+      console.error("Erro ao processar a submissão do WhatsApp no Header:", error);
       setFormStatus("form");
     }
   };
@@ -71,7 +104,6 @@ export const Header = () => {
   React.useEffect(() => {
     let lastScroll = 0;
     return scrollY.on("change", (latest) => {
-      
       if (latest > lastScroll && latest > 80) {
         setHidden(true);
       } else {
@@ -81,13 +113,11 @@ export const Header = () => {
     });
   }, [scrollY]);
 
-  
   const handleLinkClick = () => {
-      if (menuState) {
-          setMenuState(false);
-      }
+    if (menuState) {
+      setMenuState(false);
+    }
   };
-
 
   return (
     <>
@@ -114,7 +144,7 @@ export const Header = () => {
               >
                 <div className="relative w-40 h-20">
                   <Image
-                    src="/logo-grande-minas.png"
+                    src="/logo.png"
                     alt="Grande Minas Logo"
                     fill
                     className="object-contain"
@@ -127,9 +157,9 @@ export const Header = () => {
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
-                      href={item.href} 
-                      className="relative text-zinc-700 dark:text-zinc-200 hover:text-red-600 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full"
-                      onClick={handleLinkClick} 
+                      href={item.href}
+                      className="relative text-zinc-700 dark:text-zinc-200 hover:text-orange-600 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full"
+                      onClick={handleLinkClick}
                     >
                       {item.name}
                     </Link>
@@ -172,7 +202,7 @@ export const Header = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      onClick={() => setMenuState(false)} // Fecha o menu ao clicar
+                      onClick={() => setMenuState(false)}
                       className="block text-zinc-700 dark:text-zinc-200 hover:text-red-600 transition-colors"
                     >
                       {item.name}
@@ -181,11 +211,10 @@ export const Header = () => {
                 ))}
               </ul>
               <div className="mt-6">
-                {/* Botão Contato Mobile */}
                 <Button
                   onClick={() => {
                     openModal();
-                    setMenuState(false); 
+                    setMenuState(false);
                   }}
                   className="w-full rounded-full bg-red-600 hover:bg-red-700 shadow-lg text-white"
                 >
@@ -197,15 +226,111 @@ export const Header = () => {
         </nav>
       </motion.header>
 
-      {/* Renderização do Modal */}
+      {/* Usando o componente Modal existente */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <SubscriptionForm
-          status={formStatus}
-          onSubmit={handleFormSubmit}
-          onCancel={closeModal}
-          
-          selectedContent="Area Desejada"
-        />
+        <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+          <div className="flex justify-between items-center p-6 border-b">
+            <h3 className="text-lg font-semibold">Entre em Contato</h3>
+            <button
+              onClick={closeModal}
+              className="text-gray-500 hover:text-gray-700"
+            >
+              Fechar <X size={24} />
+            </button>
+          </div>
+
+          <form onSubmit={handleFormSubmit} className="p-6">
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Nome Completo *
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                placeholder="Seu nome completo"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                WhatsApp *
+              </label>
+              <input
+                type="tel"
+                name="whatsapp"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                placeholder="(00) 00000-0000"
+                onInput={(e) => {
+                  let value = e.currentTarget.value.replace(/\D/g, '');
+
+                  
+                  if (value.length <= 11) {
+                    if (value.length > 2) {
+                      value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+                    }
+                    if (value.length > 7) {
+                      value = `${value.substring(0, 10)}-${value.substring(10)}`;
+                    }
+                  }
+
+                  e.currentTarget.value = value;
+                }}
+              />
+              <p className="text-xs text-gray-500 mt-1">Digite apenas números</p>
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                placeholder="seu@email.com"
+              />
+            </div>
+
+            {/* Campo de Áreas de Interesse */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-3">
+                Áreas de Interesse (opcional)
+              </label>
+              <div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto p-1">
+                {AREAS_DE_INTERESSE.map((area) => (
+                  <label
+                    key={area}
+                    className="flex items-center space-x-2 p-2 border border-gray-300 rounded-md hover:bg-gray-50 cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedAreas.includes(area)}
+                      onChange={() => handleAreaToggle(area)}
+                      className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                    />
+                    <span className="text-sm">{area}</span>
+                  </label>
+                ))}
+              </div>
+              {selectedAreas.length > 0 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  Selecionadas: {selectedAreas.join(', ')}
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              disabled={formStatus === "loading"}
+              className="w-full bg-orange-600 text-white py-3 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {formStatus === "loading" ? "Enviando..." : "Enviar para WhatsApp"}
+            </button>
+          </form>
+        </div>
       </Modal>
     </>
   );

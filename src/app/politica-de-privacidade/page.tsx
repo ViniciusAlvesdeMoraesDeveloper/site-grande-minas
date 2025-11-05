@@ -5,18 +5,23 @@ import { useRouter } from "next/navigation";
 export default function PoliticaPrivacidade() {
   const router = useRouter();
 
+  // Definições de cor
+  const blazeOrange = "#FF5B04";
+  const mirage = "#16232A";
+  const wildSand = "#E4EEF0";
+
   return (
-    <div className="min-h-screen bg-zinc-50 py-16 px-6">
+    <div className={`min-h-screen bg-[${wildSand}] py-16 px-6`}>
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
         {/* Cabeçalho */}
         <div className="flex items-center gap-3 mb-8">
-          <ShieldCheck className="w-10 h-10 text-red-700" />
-          <h1 className="text-3xl font-bold text-zinc-800">
+          <ShieldCheck className={`w-10 h-10 text-[${blazeOrange}]`} />
+          <h1 className={`text-3xl font-bold text-[${mirage}]`}>
             Política de Privacidade
           </h1>
         </div>
 
-        <p className="text-zinc-600 mb-6">
+        <p className={`text-[${mirage}]/70 mb-6`}>
           Sua privacidade é muito importante para nós. Esta Política de
           Privacidade descreve como coletamos, usamos e protegemos suas
           informações em conformidade com a Lei Geral de Proteção de Dados (LGPD
@@ -24,9 +29,9 @@ export default function PoliticaPrivacidade() {
         </p>
 
         {/* Seções */}
-        <div className="space-y-6 text-zinc-700 text-sm leading-relaxed">
+        <div className={`space-y-6 text-[${mirage}]/80 text-sm leading-relaxed`}>
           <section>
-            <h2 className="text-lg font-semibold text-zinc-800 mb-2">
+            <h2 className={`text-lg font-semibold text-[${mirage}] mb-2`}>
               1. Dados que coletamos
             </h2>
             <ul className="list-disc pl-6 space-y-1">
@@ -38,7 +43,7 @@ export default function PoliticaPrivacidade() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-800 mb-2">
+            <h2 className={`text-lg font-semibold text-[${mirage}] mb-2`}>
               2. Como utilizamos seus dados
             </h2>
             <p>Os dados coletados serão utilizados exclusivamente para:</p>
@@ -50,7 +55,7 @@ export default function PoliticaPrivacidade() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-800 mb-2">
+            <h2 className={`text-lg font-semibold text-[${mirage}] mb-2`}>
               3. Compartilhamento de dados
             </h2>
             <p>
@@ -60,7 +65,7 @@ export default function PoliticaPrivacidade() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-800 mb-2">
+            <h2 className={`text-lg font-semibold text-[${mirage}] mb-2`}>
               4. Segurança
             </h2>
             <p>
@@ -71,7 +76,7 @@ export default function PoliticaPrivacidade() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-800 mb-2">
+            <h2 className={`text-lg font-semibold text-[${mirage}] mb-2`}>
               5. Seus direitos
             </h2>
             <p>
@@ -80,7 +85,7 @@ export default function PoliticaPrivacidade() {
               em contato conosco pelo e-mail{" "}
               <a
                 href="mailto:contato@seudominio.com"
-                className="text-red-700 font-medium hover:underline"
+                className={`text-[${blazeOrange}] font-medium hover:underline`}
               >
                 gerenciageraltecminas@gmail.com
               </a>
@@ -89,7 +94,7 @@ export default function PoliticaPrivacidade() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-800 mb-2">
+            <h2 className={`text-lg font-semibold text-[${mirage}] mb-2`}>
               6. Alterações nesta política
             </h2>
             <p>
@@ -104,12 +109,12 @@ export default function PoliticaPrivacidade() {
         <div className="mt-10 flex items-center justify-between">
           <button
             onClick={() => router.back()}
-            className="flex items-center gap-2 px-6 py-2 rounded-lg bg-zinc-100 text-zinc-700 font-medium hover:bg-zinc-200 transition"
+            className={`flex items-center gap-2 px-6 py-2 rounded-lg bg-[${wildSand}] text-[${mirage}] font-medium hover:bg-gray-200 transition`}
           >
             <ArrowLeft size={18} />
             Voltar
           </button>
-          <span className="text-sm text-zinc-500">
+          <span className="text-sm text-gray-500">
             Última atualização: Setembro/2025
           </span>
         </div>
