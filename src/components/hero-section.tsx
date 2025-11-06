@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    //Correcao a tag relative corrige o erro de responsividade
+
     <section className="relative w-full h-[600px] overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <picture>
@@ -35,12 +35,13 @@ export default function HeroSection() {
           />
         </picture>
       </div>
-      <div className="relative z-10 flex flex-col items-center md:items-start justify-end h-full text-center md:text-left p-4 sm:p-8 md:px-20">
-        <div className="hidden md:flex  flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12 ">
+      <div className="relative z-10 flex flex-col items-center md:items-start justify-end h-full text-center md:text-left p-4 sm:p-8 md:px-20 pb-32 md:pb-12">
+        {/* Container desktop - mantém igual */}
+        <div className="hidden md:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
           <Button
             asChild
             size="lg"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-8 py-6 "
+            className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-8 py-6"
           >
             <Link href="/#cursos">Comece agora</Link>
           </Button>
@@ -49,18 +50,18 @@ export default function HeroSection() {
             asChild
             size="lg"
             variant="outline"
-            className="bg-transparent border-white hover:bg-white text-white font-bold text-lg px-8 py-6"
+            className="border-white text-lg px-8 py-6"
           >
             <Link href="/#cursos">Cursos</Link>
           </Button>
         </div>
 
-        {/** Layout mobile */}
-      <div className="flex md:hidden flex-col  sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-35 ">
-      <Button
+       
+        <div className="flex md:hidden flex-row items-center justify-satart gap-4 w-full absolute bottom-2 left-1/2 transform -translate-x-1/2">
+          <Button
             asChild
             size="lg"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-8 py-6 "
+            className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-6 py-4 flex-1 max-w-[200px]"
           >
             <Link href="/#cursos">Comece agora</Link>
           </Button>
@@ -69,12 +70,11 @@ export default function HeroSection() {
             asChild
             size="lg"
             variant="outline"
-            className=" border-white text-lg px-8 py-6"
+            className="border-white  text-lg px-6 py-4 flex-1 max-w-[200px]"
           >
             <Link href="/#cursos">Cursos</Link>
           </Button>
-
-      </div>
+        </div>
       </div>
     </section>
   );
