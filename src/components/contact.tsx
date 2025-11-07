@@ -62,7 +62,7 @@ export default function Contact() {
   ];
 
   return (
-    <Card id="contato" className="w-full max-w-4xl mx-auto shadow-xl rounded-3xl p-10 bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200 mb-20">
+    <Card id="contato" className="w-full max-w-4xl mx-auto shadow-xl rounded-3xl p-10 bg-gray-100 border-gray-200 mb-20 ">
       <CardHeader>
         <CardTitle className="text-3xl font-bold text-center text-gray-900 tracking-tight">
           Contatos da Empresa

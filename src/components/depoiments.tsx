@@ -85,7 +85,7 @@ const Depoiments = () => {
   const neutralBackground = "#E4EEF0";
 
   return (
-    <section id="depoimentos" className={`py-20 bg-[${neutralBackground}]`}>
+    <section id="depoimentos" className={`py-20 bg-gray-200`}>
       <div className="container mx-auto px-4">
         {/* Header ADAPTADO */}
         <div className="text-center mb-16">
