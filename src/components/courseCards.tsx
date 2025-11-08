@@ -16,28 +16,28 @@ export interface CourseCardProps {
 }
 
 export const metadata = {
-  title: "Cursos Técnicos e Profissionalizantes | Colégio Técnico TecMinas",
+  title: "Cursos Técnicos e Profissionalizantes | Colégio Técnico Grandeminas",
   description:
-    "Descubra os cursos técnicos e profissionalizantes da TecMinas: Logística, Enfermagem, Saúde, Administração e muito mais. Ensino de qualidade com alta taxa de empregabilidade.",
+    "Descubra os cursos técnicos e profissionalizantes da Grandeminas: Logística, Enfermagem, Saúde, Administração e muito mais. Ensino de qualidade com alta taxa de empregabilidade.",
   keywords: [
     "Cursos Técnicos",
     "Cursos Profissionalizantes",
     "Curso de Logística",
     "Curso de Enfermagem",
-    "TecMinas Cursos",
+    "Grandeminas Cursos",
   ],
   openGraph: {
-    title: "Cursos Técnicos da TecMinas",
+    title: "Cursos Técnicos da Grandeminas",
     description:
       "Conheça nossos cursos técnicos e profissionalizantes, preparados para o mercado de trabalho.",
-    url: "https://colegiotecminas.com.br/cursos",
-    siteName: "TecMinas",
+    url: "https://colegiograndeminas.com.br/cursos",
+    siteName: "Grandeminas",
     images: [
       {
-        url: "https://colegiotecminas.com.br/images/cursos.jpg",
+        url: "https://colegiograndeminas.com.br/images/cursos.jpg",
         width: 1200,
         height: 630,
-        alt: "Cursos Técnicos da TecMinas",
+        alt: "Cursos Técnicos da Grandeminas",
       },
     ],
     locale: "pt_BR",

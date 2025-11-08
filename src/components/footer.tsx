@@ -1,11 +1,13 @@
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import PoliticaPrivacidade from "@/app/politica-de-privacidade/page";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    // Fundo escuro para um visual premium
+
     <footer className="bg-[#111827] text-[#F9FAFB]">
       <div className="container mx-auto px-4 py-16">
-        {/* Grid principal com 4 colunas para um layout completo e balanceado */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Coluna 1: Logo e Redes Sociais */}
           <div className="space-y-4">
@@ -49,7 +51,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-[#9CA3AF]">
               <li>
                 <a
-                  href="#cursos"
+                  href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Área da Saúde
@@ -57,7 +59,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#cursos"
+                  href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Administração & Gestão
@@ -65,7 +67,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#cursos"
+                  href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Tecnologia e Informática
@@ -73,7 +75,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#cursos"
+                  href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Engenharia & Manutenção
@@ -81,7 +83,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#cursos"
+                  href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Construção e Infraestrutura
@@ -103,7 +105,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#contato" className="hover:text-[#FF5B04] transition-colors">
+                <a href="/#contato" className="hover:text-[#FF5B04] transition-colors">
                   Contato
                 </a>
               </li>
@@ -128,7 +130,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Coluna 4: Informações de Contato */}
+
           <div>
             <h4 className="font-semibold text-white mb-4">Entre em Contato</h4>
             <ul className="space-y-4 text-sm text-[#9CA3AF]">
@@ -161,14 +163,33 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Barra de Copyright */}
-        <div className="mt-16 pt-8 border-t border-gray-800 text-center">
-          <p className="text-sm text-[#9CA3AF]">
-            © {new Date().getFullYear()} GrandeMinas. Todos os direitos reservados.
-          </p>
-          <p className="text-sm text-[#9CA3AF]">
-            CNPJ: 63.110.658/0001-76 | Credenciada pelo MEC
-          </p>
+
+        <div className="mt-16 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+
+            {/* Container vazio à esquerda para balancear o layout */}
+            <div className="w-full md:w-1/3 order-1 md:order-1"></div>
+
+            {/* Copyright - centralizado */}
+            <div className="text-center w-full md:w-1/3 order-2 md:order-2">
+              <p className="text-sm text-[#9CA3AF]">
+                © {new Date().getFullYear()} GrandeMinas. Todos os direitos reservados.
+              </p>
+              <p className="text-sm text-[#9CA3AF]">
+                CNPJ: 63.110.658/0001-76 | Credenciada pelo MEC
+              </p>
+            </div>
+
+            {/* Política de Privacidade - lado direito */}
+            <div className="text-center md:text-right w-full md:w-1/3 order-3 md:order-3">
+              <Link
+                href="/politica-de-privacidade"
+                className="text-sm text-[#9CA3AF] hover:text-[#FF5B04] transition-colors"
+              >
+                Política de Privacidade
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

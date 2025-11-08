@@ -8,7 +8,7 @@ import { CourseInformationsProps } from "@/components/courseInformations";
 import CourseInformations from "@/components/courseInformations";
 import CourseCard from "@/components/courseCards";
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react"; // Usando um ícone mais limpo
+import { ChevronLeft } from "lucide-react"; 
 
 export default function CursosSlugPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -19,19 +19,19 @@ export default function CursosSlugPage() {
     (course) => slugify(course.subTitle) === decodedSlug
   );
 
-  // Definições de cor
+  
   const blazeOrange = "#FF5B04";
   const mirage = "#16232A";
   const wildSand = "#E4EEF0";
 
 
-  // --- 1. PÁGINA DE CATEGORIA DE CURSOS ---
+  
   if (filteredByCategory.length > 0) {
     return (
-      // Fundo em Wild Sand
+      
       <div className={`bg-[${wildSand}] min-h-screen`}>
         <div className="p-8 max-w-7xl mx-auto">
-          {/* Botão "Voltar" (Texto Mirage, Hover Blaze Orange) */}
+         
           <Link
             href="/"
             className={`group mb-12 inline-flex items-center gap-1.5 text-[${mirage}]/70 hover:text-[${blazeOrange}] transition-colors duration-300 font-semibold`}
@@ -43,10 +43,10 @@ export default function CursosSlugPage() {
             Voltar para Início
           </Link>
 
-          {/* Título com cores da marca e tipografia premium */}
+          
           <h1 className={`text-4xl md:text-5xl font-bold mb-4 text-[${mirage}] leading-tight`}>
             Explore os melhores cursos de{" "}
-            {/* Efeito de texto em gradiente para um toque premium (Blaze Orange) */}
+            
             <span className={`bg-gradient-to-r from-[${blazeOrange}] to-orange-600 bg-clip-text text-transparent`}>
               {filteredByCategory[0].subTitle}
             </span>
@@ -56,7 +56,7 @@ export default function CursosSlugPage() {
             qualidade. Escolha abaixo e invista no seu futuro!
           </p>
 
-          {/* Grid com os cards dos cursos */}
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredByCategory.map((course, index) => (
               <CourseCard key={index} {...course} />
@@ -74,11 +74,11 @@ export default function CursosSlugPage() {
 
   if (course) {
     const cardData = allCoursesForCards.find((c) => c.title === course.title);
-    // Este componente já possui seu próprio estilo (e já foi modificado)
+    
     return <CourseInformations course={course} cardData={cardData} />;
   }
 
-  // --- 3. PÁGINA DE ERRO 404 ---
+  
   return (
     <div className={`bg-[${wildSand}] flex flex-col items-center justify-center min-h-screen text-center p-6`}>
       <h1 className={`text-4xl font-bold text-[${mirage}]`}>
@@ -89,7 +89,7 @@ export default function CursosSlugPage() {
         endereço digitado e tente novamente.
       </p>
 
-      {/* Botão de ação primário (Blaze Orange) */}
+      
       <Link
         href="/"
         className={`group inline-flex items-center gap-2 bg-[${blazeOrange}] hover:bg-orange-600 text-white

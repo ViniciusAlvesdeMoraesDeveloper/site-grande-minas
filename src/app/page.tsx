@@ -131,7 +131,7 @@ export default function Home() {
       </div>
       <div className="my-10 sm:my-24" />
       <div id="sobrenos">
-        {/* Seu conteúdo sobre nós */}
+       
       </div>
 
       <SearchSection
