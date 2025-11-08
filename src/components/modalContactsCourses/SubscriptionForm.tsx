@@ -50,8 +50,7 @@ export default function SubscriptionForm({
   const isGeneralContactMode = typeof handleAreaSelect === 'function';
   const isCourseEnrollmentMode = !isGeneralContactMode;
 
-  // Converter explicitamente para boolean
-  const ariaExpanded = Boolean(isAreasOpen);
+  
 
   const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value.replace(/\D/g, "");
@@ -199,8 +198,6 @@ export default function SubscriptionForm({
                 onChange={(e) => setLgpdAccepted(e.target.checked)}
                 className="peer hidden"
                 required
-                aria-required="true"
-                aria-describedby="lgpd-description"
               />
               
               <span

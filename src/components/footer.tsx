@@ -1,5 +1,4 @@
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
-import PoliticaPrivacidade from "@/app/politica-de-privacidade/page";
 import Link from "next/link";
 
 const Footer = () => {
@@ -27,21 +26,21 @@ const Footer = () => {
               Grande Minas: Seu Grande Salto em Competências.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a
+              <Link
                 href="https://www.instagram.com/grandeminas.ead?igsh=YzJrbHoyM2Ricnpp&utm_source=qr"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF5B04] cursor-pointer transition-colors" />
-              </a>
+              </Link>
             </div>
 
             <div className="flex space-x-4 pt-2">
-              <a
+              <Link
                 href="https://www.facebook.com/share/14R1iPUTdP1/?mibextid=wwXIfr"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF5B04] cursor-pointer transition-colors" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -50,44 +49,44 @@ const Footer = () => {
             <h4 className="font-semibold text-white mb-4">Cursos</h4>
             <ul className="space-y-3 text-sm text-[#9CA3AF]">
               <li>
-                <a
+                <Link
                   href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Área da Saúde
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Administração & Gestão
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Tecnologia e Informática
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Engenharia & Manutenção
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#cursos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Construção e Infraestrutura
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -97,35 +96,35 @@ const Footer = () => {
             <h4 className="font-semibold text-white mb-4">Links Úteis</h4>
             <ul className="space-y-3 text-sm text-[#9CA3AF]">
               <li>
-                <a
+                <Link
                   href="/sobre-nos"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   Sobre Nós
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#contato" className="hover:text-[#FF5B04] transition-colors">
+                <Link href="/#contato" className="hover:text-[#FF5B04] transition-colors">
                   Contato
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="hover:text-[#FF5B04] transition-colors"
-                ></a>
+                ></Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="hover:text-[#FF5B04] transition-colors"
-                ></a>
+                ></Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="hover:text-[#FF5B04] transition-colors"
-                ></a>
+                ></Link>
               </li>
             </ul>
           </div>
@@ -143,21 +142,21 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5" />
-                <a
-                  href="mailto: grandeminas.tec@gmail.com"
+                <Link
+                  href="mailto:grandeminas.tec@gmail.com"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   gerenciageraltecminas@gmail.com
-                </a>
+                </Link>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5" />
-                <a
+                <Link
                   href="tel:+5531973309678"
                   className="hover:text-[#FF5B04] transition-colors"
                 >
                   (31) 973309678
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
