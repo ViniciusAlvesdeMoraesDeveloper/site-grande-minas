@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "./lib/utils";
 import { motion, useScroll } from "framer-motion";
 import Modal from "./modalContactsCourses/modal";
-// Remove a importação do SubscriptionForm já que vamos criar o formulário diretamente
 
 interface MenuItem {
   name: string;
@@ -58,7 +57,6 @@ export const Header = () => {
     setSelectedAreas([]);
   }, []);
 
-  // Função para alternar áreas selecionadas
   const handleAreaToggle = (area: string) => {
     setSelectedAreas(prev => {
       if (prev.includes(area)) {
@@ -69,7 +67,6 @@ export const Header = () => {
     });
   };
 
-  // Função de submit atualizada
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormStatus("loading");
@@ -79,7 +76,6 @@ export const Header = () => {
       const name = formData.get('name') as string;
       const userWhatsapp = formData.get('whatsapp') as string;
       const email = formData.get('email') as string;
-      
 
       // Formatar áreas selecionadas
       const areasText = selectedAreas.length > 0
@@ -130,7 +126,7 @@ export const Header = () => {
         <nav
           data-state={menuState && "active"}
           className={cn(
-            "backdrop-blur-2xl bg-white/80 dark:bg-black/60 border-b border-zinc-200 dark:border-zinc-800 shadow-sm"
+            "backdrop-blur-2xl bg-[#125472] border-b border-blue-400/30 shadow-sm"
           )}
         >
           <div className="mx-auto max-w-6xl px-6">
@@ -146,7 +142,8 @@ export const Header = () => {
                   <Image
                     src="/logo.png"
                     alt="Grande Minas Logo"
-                    fill
+                    width={80}
+                    height={80}
                     className="object-contain"
                   />
                 </div>
@@ -158,7 +155,7 @@ export const Header = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="relative text-zinc-700 dark:text-zinc-200 hover:text-orange-600 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative text-white hover:text-orange-500 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
                       onClick={handleLinkClick}
                     >
                       {item.name}
@@ -171,7 +168,7 @@ export const Header = () => {
               <div className="hidden lg:flex">
                 <Button
                   onClick={openModal}
-                  className="rounded-full bg-[#FF5B04] text-white transitions hover:bg-green-600 hover:text-white px-6 shadow-lg"
+                  className="rounded-full bg-orange-500 hover:bg-orange-600 text-white transitions px-6 shadow-lg hover:shadow-orange-500/25"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Contato
@@ -182,7 +179,7 @@ export const Header = () => {
               <button
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState ? "Close Menu" : "Open Menu"}
-                className="lg:hidden relative z-50"
+                className="lg:hidden relative z-50 text-white hover:text-orange-300 transition-colors"
               >
                 {menuState ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -195,7 +192,7 @@ export const Header = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-800 shadow-md px-6 py-6"
+              className="lg:hidden bg-[#0f4760] border-t border-blue-400/30 shadow-md px-6 py-6"
             >
               <ul className="space-y-6 text-lg font-medium">
                 {menuItems.map((item, index) => (
@@ -203,7 +200,7 @@ export const Header = () => {
                     <Link
                       href={item.href}
                       onClick={() => setMenuState(false)}
-                      className="block text-zinc-700 dark:text-zinc-200 hover:text-red-600 transition-colors"
+                      className="block text-white hover:text-amber-300 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -216,7 +213,7 @@ export const Header = () => {
                     openModal();
                     setMenuState(false);
                   }}
-                  className="w-full rounded-full bg-red-600 hover:bg-red-700 shadow-lg text-white"
+                  className="w-full rounded-full bg-amber-500 hover:bg-amber-600 shadow-lg text-white"
                 >
                   Contato
                 </Button>
@@ -266,7 +263,6 @@ export const Header = () => {
                 onInput={(e) => {
                   let value = e.currentTarget.value.replace(/\D/g, '');
 
-                  
                   if (value.length <= 11) {
                     if (value.length > 2) {
                       value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
@@ -325,7 +321,7 @@ export const Header = () => {
             <button
               type="submit"
               disabled={formStatus === "loading"}
-              className="w-full bg-orange-600 text-white py-3 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-orange-500 text-white py-3 px-4 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {formStatus === "loading" ? "Enviando..." : "Enviar para WhatsApp"}
             </button>

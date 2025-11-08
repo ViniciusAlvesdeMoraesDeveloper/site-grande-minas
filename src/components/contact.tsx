@@ -49,8 +49,8 @@ export default function Contact() {
     {
       icon: <Instagram className="w-6 h-6 text-pink-500" />,
       label: "Instagram",
-      value: "@Grandeminas.ead",
-      href: "https://www.instagram.com/grandeminas.tec?igsh=YzJrbHoyM2Ricnpp&utm_source=qr",
+      value: "@grandeminas.ead",
+      href: "https://www.instagram.com/grandeminas.ead?igsh=YzJrbHoyM2Ricnpp&utm_source=qr",
     },
     {
       icon: <MapPin className="w-6 h-6 text-green-600" />,

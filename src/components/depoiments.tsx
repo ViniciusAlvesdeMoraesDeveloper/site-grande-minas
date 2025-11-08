@@ -85,7 +85,7 @@ const Depoiments = () => {
   const neutralBackground = "#E4EEF0";
 
   return (
-    <section id="depoimentos" className={`py-20 bg-gray-200`}>
+    <section id="depoimentos" className={`py-20 bg-[#125472]`}>
       <div className="container mx-auto px-4">
         {/* Header ADAPTADO */}
         <div className="text-center mb-16">
@@ -93,13 +93,13 @@ const Depoiments = () => {
           <Badge variant="secondary" className="font-semibold mb-4 bg-gray-100 text-[#16232A]">
             🚀 Histórias de Flexibilidade e Conquista
           </Badge>
-          <h2 className={`text-3xl lg:text-5xl font-bold text-[${primaryText}] mb-6`}>
+          <h2 className={`text-3xl lg:text-5xl font-bold text-white mb-6`}>
             O que nossos alunos
             <span style={{ color: primaryColor }} className="block">
               dizem sobre a Grande Minas
             </span>
           </h2>
-          <p className={`text-xl text-[${primaryText}]/70 max-w-3xl mx-auto mb-8`}>
+          <p className={`text-xl text-white max-w-3xl mx-auto mb-8`}>
             De Certificação por Competência à Conclusão do EJA: veja
             depoimentos reais de quem está avançando na carreira e na vida com a
             flexibilidade do nosso EAD.
@@ -131,7 +131,7 @@ const Depoiments = () => {
           {testimonials.map((testimonial) => (
             <Card
               key={testimonial.id}
-              // AQUI ESTÁ A ALTERAÇÃO: Sombra com cor de brilho Blaze Orange
+             
               className={`bg-white transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[${primaryColor}]/20 border border-[${neutralBackground}]`}
             >
               <CardContent className="p-6 flex flex-col h-full">
@@ -140,14 +140,14 @@ const Depoiments = () => {
                     <Star
                       key={i}
                       className="w-4 h-4"
-                      // Usando Deep Sea Green para as estrelas, se a intenção é diferenciar (HEX 075056)
+                      
                       style={{ fill: "#075056", color: "#075056" }}
                     />
                   ))}
                 </div>
 
                 <div className="relative mb-6 flex-grow">
-                  {/* Ícone de aspas sutil, em uma cor clara do fundo */}
+                 
                   <Quote className={`absolute -top-2 -left-2 w-6 h-6 text-[${neutralBackground}]`} />
                   <p className={`text-[${primaryText}]/70 leading-relaxed pl-4`}>
                     {testimonial.text}
@@ -165,7 +165,7 @@ const Depoiments = () => {
                       <div className={`font-semibold text-[${primaryText}]`}>
                         {testimonial.name}
                       </div>
-                      {/* Cargo em Blaze Orange para dar destaque à conquista */}
+                      
                       <div
                         className="text-sm font-medium"
                         style={{ color: primaryColor }}
@@ -179,12 +179,11 @@ const Depoiments = () => {
                   </div>
                 </div>
 
-                {/* Métricas de sucesso com borda Wild Sand */}
                 <div className="mt-4 pt-4 border-t border-[${neutralBackground}]">
                   <div className="grid grid-cols-2 gap-4 text-xs">
                     <div>
                       <div className="text-gray-500">Conquista Financeira</div>
-                      {/* Salário em Mirage para legibilidade */}
+                     
                       <div className={`font-bold text-[${primaryText}]`}>
                         {testimonial.salary}
                       </div>

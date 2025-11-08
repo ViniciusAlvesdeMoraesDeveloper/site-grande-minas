@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 pt-2">
               <a
-                href="https://www.instagram.com/grandeminas.tec?igsh=YzJrbHoyM2Ricnpp&utm_source=qr"
+                href="https://www.instagram.com/grandeminas.ead?igsh=YzJrbHoyM2Ricnpp&utm_source=qr"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF5B04] cursor-pointer transition-colors" />

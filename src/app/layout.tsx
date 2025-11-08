@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className= {`${geistSans.variable} ${geistMono.variable} antialiased  bg-gray-200`}
+        className= {`${geistSans.variable} ${geistMono.variable} antialiased  bg-[#125472]`}
       >
         {children}
         <SchemaOrg />

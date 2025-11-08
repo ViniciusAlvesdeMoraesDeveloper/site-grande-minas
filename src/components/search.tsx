@@ -17,7 +17,7 @@ export default function SearchSection({
         as="h2"
         preset="fade-in-blur"
         delay={0.3}
-        className="text-4xl md:text-5xl font-bold text-zinc-800 tracking-tight"
+        className="text-4xl md:text-5xl font-bold text-white tracking-tight"
       >
         Encontre seu Curso Ideal
       </TextEffect>
@@ -27,7 +27,7 @@ export default function SearchSection({
         per="line"
         preset="fade-in-blur"
         delay={0.6}
-        className="max-w-2xl mx-auto mt-4 text-lg text-zinc-600"
+        className="max-w-2xl mx-auto mt-4 text-lg text-white"
       >
         Explore nossa ampla gama de cursos e encontre o que melhor se adapta aos
         seus objetivos profissionais.
