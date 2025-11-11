@@ -24,7 +24,7 @@ type SubscriptionFormProps = {
   status: "form" | "loading" | "success";
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
   onCancel: () => void;
-  selectedContent: string; 
+  selectedContent: string;
   areaSelecionada?: AreaDoCurso | null;
   isAreasOpen?: boolean;
   setIsAreasOpen?: (state: boolean) => void;
@@ -50,7 +50,7 @@ export default function SubscriptionForm({
   const isGeneralContactMode = typeof handleAreaSelect === 'function';
   const isCourseEnrollmentMode = !isGeneralContactMode;
 
-  
+
 
   const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value.replace(/\D/g, "");
@@ -142,7 +142,7 @@ export default function SubscriptionForm({
           {/* Área de Interesse (apenas para contato geral) */}
           {isGeneralContactMode && (
             <div>
-              <label 
+              <label
                 htmlFor="area-interesse"
                 className="block text-sm font-medium text-zinc-600 mb-1"
               >
@@ -153,38 +153,35 @@ export default function SubscriptionForm({
                   type="button"
                   id="area-interesse"
                   onClick={() => setIsAreasOpen?.(!isAreasOpen)}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-zinc-100 border-2 rounded-lg text-left focus:outline-none focus:bg-white focus:border-red-500 focus:ring-2 sm:focus:ring-4 focus:ring-red-500/20 transition-all text-sm sm:text-base ${
-                    !areaSelecionada ? 'text-zinc-400' : 'text-zinc-800'
-                  }`}
-                  
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-zinc-100 border-2 rounded-lg text-left focus:outline-none focus:bg-white focus:border-red-500 focus:ring-2 sm:focus:ring-4 focus:ring-red-500/20 transition-all text-sm sm:text-base ${!areaSelecionada ? 'text-zinc-400' : 'text-zinc-800'
+                    }`}
+
                 >
                   {areaSelecionada ? areaSelecionada.nome : 'Clique para escolher a área...'}
                 </button>
 
                 {isAreasOpen && (
-                  <div 
+                  <div
                     id="area-options-list"
-                    role="listbox"
-                    aria-labelledby="area-interesse"
+                    aria-label="Selecione a área de interesse"
                     className="absolute z-10 mt-1 w-full bg-white shadow-xl max-h-48 sm:max-h-60 rounded-lg ring-1 ring-black ring-opacity-10 overflow-auto border border-zinc-200"
                   >
                     {DADOS_AREAS.map((area) => (
                       <button
                         key={area.id}
                         type="button"
-                        role="option"
                         onClick={() => handleAreaSelect?.(area)}
-                        className={`w-full text-left p-2 sm:p-3 cursor-pointer text-sm transition font-medium ${
-                          areaSelecionada?.id === area.id
-                            ? 'bg-red-100 text-red-700'
-                            : 'text-zinc-800 hover:bg-zinc-50'
-                        }`}
+                        className={`w-full text-left p-2 sm:p-3 cursor-pointer text-sm transition font-medium ${areaSelecionada?.id === area.id
+                          ? 'bg-red-100 text-red-700'
+                          : 'text-zinc-800 hover:bg-zinc-50'
+                          }`}
                       >
                         {area.nome}
                       </button>
                     ))}
                   </div>
                 )}
+
               </div>
             </div>
           )}
@@ -199,7 +196,7 @@ export default function SubscriptionForm({
                 className="peer hidden"
                 required
               />
-              
+
               <span
                 className="w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-md border-2 border-zinc-300 bg-white 
                   peer-checked:bg-red-700 peer-checked:border-red-700 transition-colors duration-200 mt-0.5"
@@ -263,7 +260,7 @@ export default function SubscriptionForm({
 
       {/* LGPD Modal */}
       {showModal && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
           role="dialog"
           aria-modal="true"
@@ -277,11 +274,11 @@ export default function SubscriptionForm({
             >
               <X size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
             </button>
-            
+
             <h2 id="lgpd-modal-title" className="text-xl sm:text-2xl font-bold text-zinc-800 mb-3 sm:mb-4 pr-8">
               Lei Geral de Proteção de Dados (LGPD)
             </h2>
-            
+
             <div className="text-xs sm:text-sm text-zinc-600 overflow-y-auto flex-1 space-y-3 sm:space-y-4 pr-2">
               <p className="leading-relaxed">
                 A LGPD (Lei nº 13.709/2018) dispõe sobre o tratamento de dados
@@ -309,7 +306,7 @@ export default function SubscriptionForm({
                 .
               </p>
             </div>
-            
+
             <div className="mt-4 sm:mt-6 flex justify-end pt-3 border-t border-zinc-200">
               <button
                 onClick={() => setShowModal(false)}
@@ -385,7 +382,7 @@ export const AreaContactModal: React.FC<AreaContactModalProps> = ({ isOpen, onCl
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4"
       role="dialog"
       aria-modal="true"
