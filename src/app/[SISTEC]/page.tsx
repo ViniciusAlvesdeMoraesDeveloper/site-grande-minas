@@ -4,7 +4,10 @@ import React, { useState } from 'react';
 
 
 export default function SistecPage() {
+
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+ const ebookUrl = "/PASSO-A-PASSO-SISTEC-GLOBALTEC.pdf";
 
   const benefits = [
     {
@@ -80,6 +83,8 @@ export default function SistecPage() {
     "Selecione a Localização: Na página de consulta, escolha o Estado e, em seguida, o Município onde a instituição de ensino está localizada.",
     "Confira os dados de registro e cursos ofertados."
   ];
+
+   
 
   return (
     <main id='sistec' className="min-h-screen bg-gradient-to-b from-white to-gray-50 mt-10">
@@ -278,6 +283,12 @@ export default function SistecPage() {
                     </li>
                   ))}
                 </ol>
+                <a href={ebookUrl}
+                  download  >
+                  <button className="mt-6 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                    Baixar Guia Passo a Passo (PDF)
+                  </button>
+                </a>
               </div>
 
               <div className="mt-6 pt-6 border-t border-green-200">
@@ -285,7 +296,7 @@ export default function SistecPage() {
                   <strong>CNPJ para consulta:</strong> 63.110.658/0001-76
                 </p>
                 <p className="text-gray-600 text-sm mt-1">
-                  <strong>Registro ativo desde:</strong> 2023
+                  <strong>Registro ativo desde:</strong> 2025
                 </p>
               </div>
             </section>
