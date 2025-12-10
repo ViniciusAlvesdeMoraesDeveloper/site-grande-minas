@@ -166,10 +166,10 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 
-            {/* Container vazio à esquerda para balancear o layout */}
+            
             <div className="w-full md:w-1/3 order-1 md:order-1"></div>
 
-            {/* Copyright - centralizado */}
+            {/* Copyright  */}
             <div className="text-center w-full md:w-1/3 order-2 md:order-2">
               <p className="text-sm text-[#9CA3AF]">
                 © {new Date().getFullYear()} GrandeMinas. Todos os direitos reservados.
@@ -179,7 +179,7 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Política de Privacidade - lado direito */}
+            {/* Política de Privacidade */}
             <div className="text-center md:text-right w-full md:w-1/3 order-3 md:order-3">
               <Link
                 href="/politica-de-privacidade"
@@ -187,6 +187,8 @@ const Footer = () => {
               >
                 Política de Privacidade
               </Link>
+      
+
             </div>
           </div>
         </div>

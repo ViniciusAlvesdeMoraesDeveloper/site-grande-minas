@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -28,12 +29,12 @@ export default function CookieConsent() {
         <p className="text-sm text-zinc-700">
           Usamos cookies para melhorar sua experiência. Ao continuar, você
           aceita nossa{" "}
-          <a
+          <Link
             href="/politica-de-privacidade"
             className="text-orange-700 font-medium hover:underline"
           >
             política de privacidade e cookies
-          </a>
+          </Link>
           .
         </p>
         <div className="flex gap-2">
