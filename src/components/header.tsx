@@ -17,7 +17,8 @@ const menuItems: MenuItem[] = [
   { name: "Início", href: "/#inicio" },
   { name: "Sobre Nós", href: "/sobre-nos" },
   { name: "Cursos", href: "/#cursos" },
-  { name: "Contato", href: "/#contato" },
+  { name: "Contato", href: "/#contato"},
+  { name: "SISTEC-MEC", href:"/sistec"}
 ];
 
 const WHATSAPP_TARGET = "5531973309678";
